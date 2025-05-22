@@ -7,7 +7,7 @@
     <key>ProgramArguments</key>
     <array>
         <string>/usr/bin/python3</string>
-        <string>/Users/rjackson/Projects/KinstaSSH/kinsta_ssh_config.py</string>
+        <string>/Users/rjackson/Projects/KinstaToSSH/kinsta_ssh_config.py</string>
     </array>
     <key>StartCalendarInterval</key>
     <dict>
@@ -17,9 +17,9 @@
         <integer>0</integer>
     </dict>
     <key>StandardErrorPath</key>
-    <string>/Users/rjackson/Projects/KinstaSSH/error.log</string>
+    <string>/Users/rjackson/Projects/KinstaToSSH/error.log</string>
     <key>StandardOutPath</key>
-    <string>/Users/rjackson/Projects/KinstaSSH/output.log</string>
+    <string>/Users/rjackson/Projects/KinstaToSSH/output.log</string>
     <key>RunAtLoad</key>
     <true/>
     <key>StartOnMount</key>
