@@ -6,8 +6,11 @@ from dotenv import load_dotenv
 import json
 import re
 
-# Load environment variables
-load_dotenv()
+# Get the script's directory
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Load environment variables from the script's directory
+load_dotenv(os.path.join(script_dir, '.env'))
 
 # Kinsta API configuration
 KINSTA_API_URL = "https://api.kinsta.com/v2"
