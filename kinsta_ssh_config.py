@@ -14,6 +14,11 @@ KINSTA_API_URL = "https://api.kinsta.com/v2"
 API_KEY = os.getenv("KINSTA_API_KEY")
 COMPANY_ID = os.getenv("KINSTA_COMPANY_ID")
 
+# SSH config output path - defaults to ~/.ssh/kinsta.config (cross-platform)
+# Can be overridden via SSH_CONFIG_PATH env var
+DEFAULT_SSH_CONFIG_PATH = "~/.ssh/kinsta.config"
+SSH_CONFIG_PATH = os.getenv("SSH_CONFIG_PATH", DEFAULT_SSH_CONFIG_PATH)
+
 def to_slug(name):
     """Convert a string to a slug format."""
     # Convert to lowercase and replace spaces with hyphens
@@ -128,13 +133,15 @@ def main():
         ssh_config = generate_ssh_config(sites)
         
         # Write to SSH config file
-        config_path = os.path.expanduser("~/Documents/.ssh/config")
+        config_path = os.path.expanduser(SSH_CONFIG_PATH)
         os.makedirs(os.path.dirname(config_path), exist_ok=True)
-        
+
         with open(config_path, "w") as f:
             f.write(ssh_config)
-        
+
         print(f"SSH config has been generated at {config_path}")
+        print(f"\nTo use these aliases, add this line to your ~/.ssh/config:")
+        print(f"  Include {SSH_CONFIG_PATH}")
         
     except Exception as e:
         print(f"Error: {str(e)}")
