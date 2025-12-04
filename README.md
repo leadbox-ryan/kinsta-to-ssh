@@ -11,6 +11,7 @@ Generates SSH config aliases for all your Kinsta WordPress sites, so you can con
 - Python 3.x
 - pip (Python package manager)
 - A Kinsta account with API access
+- Your SSH public key added to Kinsta (User Settings > SSH Keys)
 
 ## Setup
 
