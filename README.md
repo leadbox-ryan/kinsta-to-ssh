@@ -87,23 +87,23 @@ SSH_CONFIG_PATH=/custom/path/kinsta-hosts     # Custom location
 
 ### Install Schedule
 
-1. Copy the launch agent file:
-   ```bash
-   mkdir -p ~/Library/LaunchAgents
-   cp com.kinsta.sshconfig.plist ~/Library/LaunchAgents/
-   ```
+Run the setup script:
+```bash
+./setup.sh
+```
 
-2. Load the launch agent:
-   ```bash
-   launchctl load ~/Library/LaunchAgents/com.kinsta.sshconfig.plist
-   ```
+This will install a launch agent that runs the script:
+- On load (immediately)
+- Daily at midnight
+- When volumes are mounted
+
+Logs are written to `~/Library/Logs/kinsta-ssh-config.log`.
 
 ### Reinstall Schedule
 
-If you need to update the schedule:
+Just run the setup script again:
 ```bash
-launchctl unload ~/Library/LaunchAgents/com.kinsta.sshconfig.plist
-launchctl load ~/Library/LaunchAgents/com.kinsta.sshconfig.plist
+./setup.sh
 ```
 
 ### Scheduling on Windows
