@@ -1,6 +1,6 @@
 # Kinsta WP Site to SSH Config
 
-Running this command will create a ~/Documents/.ssh/config file that can be included in the main ssh/config file so that we can easily access websites without needing to look up their details in kinsta. 
+Running this command will create a `~/Documents/.ssh/config` file that can be included in the main `~/.ssh/config` file so that we can easily access websites without needing to look up their details in Kinsta. 
 
 You can also schedule this command so it runs daily, etc. 
 
